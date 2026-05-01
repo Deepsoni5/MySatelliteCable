@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "SkyLink Connect",
+  name: "SkyConnect Pro",
   description: "Premium Satellite Internet Provider - Connect to the World from Anywhere",
-  url: "https://skylinkconnect.com",
-  phone: "+1 (888) 970-1698",
-  email: "support@skylinkconnect.com",
+  url: "https://skyconnectpro.com",
+  phone: "+1 (877) 513-0191",
+  email: "support@skyconnectpro.com",
   address: "123 Satellite Way, Tech City, TC 12345",
 
   // SEO
