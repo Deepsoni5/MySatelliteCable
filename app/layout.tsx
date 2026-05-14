@@ -1,7 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { siteConfig } from "@/config/site"
 import Client from "./client"
+import './globals.css'
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -46,22 +48,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18137511673"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18137511673');
-          `,
-        }}
-      />
-      <Client children={children} />
-    </>
+    <html>
+      <head>
+        <Script 
+          async 
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18137511673"
+          strategy="afterInteractive"
+        />
+        <Script 
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18137511673');
+            `,
+          }}
+        />
+      </head>
+      <body>
+        <Client children={children} />
+      </body>
+    </html>
   )
 }
-
-
-import './globals.css'
