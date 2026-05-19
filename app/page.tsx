@@ -1,10 +1,7 @@
 import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
-import WhyChooseSection from "@/components/why-choose-section"
-import PlansSection from "@/components/plans-section"
-import PlansComparison from "@/components/plans-comparison"
-import CoverageSection from "@/components/coverage-section"
-import CTASection from "@/components/cta-section"
+import FeaturesSection from "@/components/features-section"
+import SetupGuideSection from "@/components/setup-guide-section"
 import Footer from "@/components/footer"
 
 export default function HomePage() {
@@ -12,11 +9,8 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
-      <WhyChooseSection />
-      <PlansSection />
-      <PlansComparison />
-      <CoverageSection />
-      <CTASection />
+      <FeaturesSection />
+      <SetupGuideSection />
       <Footer />
     </main>
   )
