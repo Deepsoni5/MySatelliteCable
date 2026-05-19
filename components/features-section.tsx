@@ -1,3 +1,5 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Wifi, Zap, Globe, Box, Smartphone, Router, Monitor } from "lucide-react"
