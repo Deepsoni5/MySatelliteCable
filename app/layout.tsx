@@ -50,11 +50,14 @@ export default function RootLayout({
   return (
     <html>
       <head>
+
+        {/* Google Ads / Analytics */}
         <Script 
           async 
           src="https://www.googletagmanager.com/gtag/js?id=AW-18137511673"
           strategy="afterInteractive"
         />
+
         <Script 
           id="google-analytics"
           strategy="afterInteractive"
@@ -67,9 +70,49 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Statcounter */}
+        <Script
+          id="statcounter-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var sc_project=13227668;
+              var sc_invisible=1;
+              var sc_security="5cffa333";
+            `,
+          }}
+        />
+
+        <Script
+          src="https://www.statcounter.com/counter/counter.js"
+          strategy="afterInteractive"
+        />
+
       </head>
+
       <body>
         <Client children={children} />
+
+        {/* Optional noscript fallback */}
+        <noscript>
+          <div className="statcounter">
+            <a
+              title="Web Analytics"
+              href="https://statcounter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="statcounter"
+                src="https://c.statcounter.com/13227668/0/5cffa333/1/"
+                alt="Web Analytics"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
+        </noscript>
+
       </body>
     </html>
   )
